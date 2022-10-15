@@ -1,7 +1,11 @@
 from flask import Flask, render_template
+<<<<<<< HEAD
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField
 from wtforms.validators import DataRequired
+=======
+from bs4 import BeautifulSoup
+>>>>>>> cf8781c53b328ea846b986c523943719454690c3
 
 app = Flask(__name__)
 app.config["SECRET_KEY"] = "jklasjdflkwejr234"
@@ -30,3 +34,9 @@ def sign_up():
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template("404.html")
+
+    
+with open("./templates/index.html","r") as f:
+    doc =BeautifulSoup(f,"html.parser")
+
+print(doc.prettify())
