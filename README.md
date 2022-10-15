@@ -1,3 +1,8 @@
+## Environment 
+```python -m venv virt```
+
+```source virt/bin/activate```
+
 ## Dependencies
 ```pip3 install flask```
 
