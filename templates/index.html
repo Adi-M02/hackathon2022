@@ -1,5 +1,28 @@
 {%extends "base.html"%}
 
 {%block content%}
-    <h1>Hello World</h1>
+    <div class="container-flex">
+        <div class="container-inner container-half" id="home-hero">
+            <h1 class="title"><span class="highlight">HackUIowa</span> 20<span class="highlight">22</span></h1>
+            <h3 class="sub-title">Contributors:</h3>
+            <ul class="home-list">
+                <li>Adi</li>
+                <li>Amol</li>
+                <li>Liao</li>
+                <li>Luke</li>
+            </ul>
+        </div>
+        <div class="container-inner container-half" id="home-signup">
+            <h1 class="title">Sign Up Now</h1>
+            <h3 class="sub-title" id="subtitle-signup">Sign up to save items into your personal account watchlist</h3>
+            <a href="{{url_for('sign_up')}}" class="btn-primary">Sign Up</a>
+        </div>
+    </div>
+    <div class="container-flex">
+        <form method="POST">
+            {{ form.hidden_tag() }}
+            {{ form.search.label }}
+            {{ form.search(class_="form-input", placeholder="Search Term", autocomplete="off")}}
+        </form>
+    </div>
 {%endblock%}
